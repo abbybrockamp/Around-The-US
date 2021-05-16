@@ -1,0 +1,7 @@
+.grid__card-bottom-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 25px 18px 31px 21px;
+}
