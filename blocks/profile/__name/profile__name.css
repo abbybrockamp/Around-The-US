@@ -7,6 +7,19 @@
     color: #FFFFFF;
     margin: 0;
     padding: 0 18px 0 0;
-    max-width: 373px;
-    min-height: 39px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 769px) {
+    .profile__name {
+        text-align: center;
+        padding: 0 10px 0 0;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .profile__name {
+        font-size: 22px;
+        line-height: 27px;
+    }
 }

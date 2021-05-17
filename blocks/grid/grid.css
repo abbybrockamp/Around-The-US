@@ -12,3 +12,9 @@
     row-gap: 20px;
     padding: 0 0 68px;
 }
+
+@media screen and (max-width: 880px) {
+    .grid {
+        padding: 0 19px 50px;
+    }
+}
