@@ -1,0 +1,16 @@
+.edit-form__submit {
+    display: block;
+    background-color: #000000;
+    border-radius: 2px;
+    color: #fff;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    width: 358px;
+    height: 50px; 
+    align-self: center;
+    border: none;
+}
