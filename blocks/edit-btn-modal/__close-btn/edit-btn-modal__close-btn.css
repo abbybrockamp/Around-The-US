@@ -13,3 +13,12 @@
     transform: rotate(-90deg);
     cursor: pointer;
 }
+
+@media screen and (max-width: 620px) {
+    .edit-btn-modal__close-btn {
+        width: 26px;
+        height: 26px;
+        top: -39.62;
+        right: 0;
+    }
+}
