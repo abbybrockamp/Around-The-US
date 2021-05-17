@@ -1,5 +1,6 @@
 .edit-btn-modal__box {
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     position: relative;
     background-color: #fff;
     margin: auto;
