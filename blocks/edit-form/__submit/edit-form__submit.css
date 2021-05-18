@@ -1,6 +1,7 @@
 .edit-form__submit {
     display: block;
     background-color: #000000;
+    opacity: 1;
     border-radius: 2px;
     color: #fff;
     font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -14,4 +15,10 @@
     align-self: center;
     border: none;
     margin: 0 0 36.25px;
+    transition: opacity .5s ease-in-out;
+    cursor: pointer;
+}
+
+.edit-form__submit:hover {
+    opacity: 0.8;
 }
