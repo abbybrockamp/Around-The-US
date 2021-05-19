@@ -2,7 +2,7 @@
     background-image: url(../../../images/add-btn.svg);
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #000;
+    background-color: transparent;
     align-self: center;
     justify-self: flex-end;
     width: 150px;
@@ -24,14 +24,12 @@
 
 @media screen and (max-width: 769px) {
     .profile__add-btn {
-        margin-left: 0;
         width: 50%;
     }
 }
 
 @media screen and (max-width: 481px) {
     .profile__add-btn {
-        margin-left: 0;
         width: 100%;
     }
 }

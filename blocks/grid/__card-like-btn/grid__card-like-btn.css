@@ -1,6 +1,6 @@
 .grid__card-like-btn {
     align-self: center;
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     background-image: url(../../../images/like-btn.svg);
     background-position: center;

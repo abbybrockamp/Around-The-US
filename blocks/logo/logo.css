@@ -1,10 +1,18 @@
 .logo {
     display: block;
     max-width: 173px;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 880px) {
+    .logo {
+        padding: 0 27px;
+    }
 }
 
 @media screen and (max-width: 320px) {
     .logo {
         max-width: 126px;
     }
-}
+} 

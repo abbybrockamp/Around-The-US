@@ -22,3 +22,10 @@
 .edit-form__submit:hover {
     opacity: 0.8;
 }
+
+@media screen and (max-width: 481px) {
+    .edit-form__submit {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
