@@ -10,11 +10,11 @@
     grid-template-rows: repeat(auto-fit, minmax(361px, 1fr));
     column-gap: 17px;
     row-gap: 20px;
-    padding: 0 0 68px;
+    padding: 0 0;
 }
 
 @media screen and (max-width: 880px) {
     .grid {
-        padding: 0 19px 50px;
+        padding: 0 19px;
     }
 }
