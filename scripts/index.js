@@ -11,26 +11,21 @@ let ProfileTitleEl = document.querySelector(".profile__title");
 
 function openModal() {
     editModalEl.classList.add("edit-btn-modal_open");
+    editFormNameInput.value = profileNameEl.textContent;
+    editFormTitleInput.value = ProfileTitleEl.textContent;
 }
 
 function closeModal() {
     editModalEl.classList.remove("edit-btn-modal_open");
 }
 
-profileEditBtnEl.addEventListener("click", function() {
-    openModal();
-});
-
-closeBtnEl.addEventListener("click", function() {
-    closeModal();
-});
-
-editFormNameInput.value = profileNameEl.textContent;
-editFormTitleInput.value = ProfileTitleEl.textContent;
-
-editForm.addEventListener("submit", function(event) {
+function submittedModal(event) {
     event.preventDefault();
     profileNameEl.textContent = editFormNameInput.value;
     ProfileTitleEl.textContent = editFormTitleInput.value;
     closeModal();
-});
+}
+
+profileEditBtnEl.addEventListener("click", openModal);
+closeBtnEl.addEventListener("click", closeModal);
+editForm.addEventListener("submit", submittedModal);
