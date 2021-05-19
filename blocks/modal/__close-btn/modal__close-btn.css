@@ -1,4 +1,4 @@
-.edit-btn-modal__close-btn {
+.modal__close-btn {
     background-image: url(../../../images/close-btn.svg);
     background-color: transparent;
     border: none;
@@ -17,12 +17,12 @@
     transition: opacity .5s ease-in;
 }
 
-.edit-btn-modal__close-btn:hover {
+.modal__close-btn:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 620px) {
-    .edit-btn-modal__close-btn {
+    .modal__close-btn {
         width: 26px;
         height: 26px;
         top: -39.62px;

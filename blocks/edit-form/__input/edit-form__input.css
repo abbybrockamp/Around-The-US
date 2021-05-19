@@ -1,14 +1,25 @@
-.edit-form__title {
+.edit-form__input {
     width: 100%;
     align-self: center;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 13.34px;
-    margin-bottom: 48px;
     font-family: "Inter", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
+    padding-bottom: 13.25px;
+    margin-bottom: 29.75px;
+}
+
+.edit-form__input:nth-of-type(2) {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 320px) {
+    .edit-form__input {
+        padding-bottom: 9px;
+        margin-bottom: 30px;
+    }
 }

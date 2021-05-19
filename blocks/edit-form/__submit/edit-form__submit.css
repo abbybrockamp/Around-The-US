@@ -14,7 +14,7 @@
     height: 50.15px;
     align-self: center;
     border: none;
-    margin: 0 0 36.25px;
+    margin: 48px 0 36.25px;
     transition: opacity .5s ease-in-out;
     cursor: pointer;
 }
@@ -27,5 +27,6 @@
     .edit-form__submit {
         font-size: 14px;
         line-height: 17px;
+        margin: 46px 0 25px;
     }
 }

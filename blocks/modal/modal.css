@@ -1,7 +1,7 @@
-@import url(./__close-btn/edit-btn-modal__close-btn.css);
-@import url(./__box/edit-btn-modal__box.css);
+@import url(./__close-btn/modal__close-btn.css);
+@import url(./__box/modal__box.css);
 
-.edit-btn-modal {
+.modal {
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 481px) {
-    .edit-btn-modal  {
+    .modal  {
         padding: 0 19px;
     }
 }

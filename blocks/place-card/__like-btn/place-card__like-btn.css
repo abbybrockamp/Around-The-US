@@ -1,4 +1,4 @@
-.grid__card-like-btn {
+.place-card__like-btn {
     align-self: center;
     background-color: transparent;
     border: none;
@@ -12,6 +12,6 @@
     transition: opacity .5s ease-in-out;
 }
 
-.grid__card-like-btn:hover {
+.place-card__like-btn:hover {
     opacity: 0.5;
 }

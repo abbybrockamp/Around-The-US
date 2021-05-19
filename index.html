@@ -8,17 +8,6 @@
     <title>Around The US</title>
 </head>
 <body class="page">
-    <div class="edit-btn-modal">
-        <div class="edit-btn-modal__box">
-            <button class="edit-btn-modal__close-btn" aria-label="Close" type="button"></button>
-            <form class="edit-form" id="edit-form" name="edit-form">
-                <p class="edit-form__header">Edit Profile</p>
-                <input type="text" class="edit-form__name" name="edit-form-name" placeholder="Name" required>
-                <input type="text" class="edit-form__title" name="edit-form-title" placeholder="Title" required>
-                <input class="edit-form__submit" type="submit" name="edit-form-submit" value="Save">
-            </form>
-        </div>
-    </div>
     <main class="content">
         <header class="header">
             <img src="./images/logo.svg" alt="Around The US logo" class="logo logo_location_header">
@@ -30,62 +19,73 @@
                     <h1 class="profile__name">Jacques Cousteau</h1>
                     <button class="profile__edit-btn" type="button" aria-label="Edit profile"></button>
                 </div>
-                <h2 class="profile__title">Explorer</h2>
+                <p class="profile__title">Explorer</p>
             </div>
             <button class="profile__add-btn" type="button" aria-label="Add new location"></button>
         </section>
         <section class="grid">
-            <div class="grid__card">
-                <img src="./images/fairbanks-alaska.jpg" alt="Faribanks, Alaska" class="grid__card-image">
-                <div class="grid__card-bottom-container">
-                    <h3 class="grid__card-title">Fairbanks, Alaska</h3>
-                    <button class="grid__card-like-btn" type="button" aria-label="Like"></button>
+            <div class="place-card">
+                <img src="./images/fairbanks-alaska.jpg" alt="Faribanks, Alaska" class="place-card__image">
+                <div class="place-card__bottom-container">
+                    <p class="place-card__title">Fairbanks, Alaska</p>
+                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
                 </div>
             </div>
 
-            <div class="grid__card">
-                <img src="./images/glacier-montana.jpg" alt="Glacier National Park" class="grid__card-image">
-                <div class="grid__card-bottom-container">
-                    <h3 class="grid__card-title">Glacier National Park, Montana</h3>
-                    <button class="grid__card-like-btn" type="button" aria-label="Like"></button>
+            <div class="place-card">
+                <img src="./images/glacier-montana.jpg" alt="Glacier National Park" class="place-card__image">
+                <div class="place-card__bottom-container">
+                    <p class="place-card__title">Glacier National Park, Montana</p>
+                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
                 </div>
             </div>
 
-            <div class="grid__card">
-                <img src="./images/grand-canyon-arizona.jpg" alt="The Grand Canyon in Arizona" class="grid__card-image">
-                <div class="grid__card-bottom-container">
-                    <h3 class="grid__card-title">The Grand Canyon, Arizona</h3>
-                    <button class="grid__card-like-btn" type="button" aria-label="Like"></button>
+            <div class="place-card">
+                <img src="./images/grand-canyon-arizona.jpg" alt="The Grand Canyon in Arizona" class="place-card__image">
+                <div class="place-card__bottom-container">
+                    <p class="place-ard__title">The Grand Canyon, Arizona</p>
+                    <button class="palce-card__like-btn" type="button" aria-label="Like"></button>
                 </div>
             </div>
 
-            <div class="grid__card">
-                <img src="./images/moab-utah.jpg" alt="Moab, Utah" class="grid__card-image">
-                <div class="grid__card-bottom-container">
-                    <h3 class="grid__card-title">Moab, Utah</h3>
-                    <button class="grid__card-like-btn" type="button" aria-label="Like"></button>
+            <div class="place-card">
+                <img src="./images/moab-utah.jpg" alt="Moab, Utah" class="place-card__image">
+                <div class="place-card__bottom-container">
+                    <p class="place-card__title">Moab, Utah</p>
+                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
                 </div>
             </div>
 
-            <div class="grid__card">
-                <img src="./images/painted-hills-oregon.jpg" alt="The Painted Hills in Oregon" class="grid__card-image">
-                <div class="grid__card-bottom-container">
-                    <h3 class="grid__card-title">The Painted Hills, Oregon</h3>
-                    <button class="grid__card-like-btn" type="button" aria-label="Like"></button>
+            <div class="place-card">
+                <img src="./images/painted-hills-oregon.jpg" alt="The Painted Hills in Oregon" class="place-card__image">
+                <div class="place-card__bottom-container">
+                    <p class="place-card__title">The Painted Hills, Oregon</p>
+                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
                 </div>
             </div>
 
-                <div class="grid__card">
-                    <img src="./images/yellowstone-montana.jpg" alt="Yellowstone National Park" class="grid__card-image">
-                    <div class="grid__card-bottom-container">
-                        <h3 class="grid__card-title">Yellowstone National Park, Montana</h3>
-                        <button class="grid__card-like-btn" type="button" aria-label="Like"></button>
+                <div class="place-card">
+                    <img src="./images/yellowstone-montana.jpg" alt="Yellowstone National Park" class="place-card__image">
+                    <div class="place-card__bottom-container">
+                        <p class="place-card__title">Yellowstone National Park, Montana</p>
+                        <button class="place-card__like-btn" type="button" aria-label="Like"></button>
                     </div>
                 </div>
             </section>
         <footer class="footer">
             <p class="footer__copyright">© 2021 Around The U.S.</p>
         </footer>
+        <div class="modal">
+            <div class="modal__box">
+                <button class="modal__close-btn" aria-label="Close" type="button"></button>
+                <form class="edit-form" id="edit-form" name="edit-form">
+                    <h2 class="edit-form__header">Edit Profile</h2>
+                    <input type="text" class="edit-form__input edit-form__input_content_name" name="edit-form-name" placeholder="Name" required>
+                    <input type="text" class="edit-form__input edit-form__input_content_title" name="edit-form-title" placeholder="Title" required>
+                    <input class="edit-form__submit" type="submit" name="edit-form-submit" value="Save">
+                </form>
+            </div>
+        </div>
     </main> 
 <script src="scripts/index.js"></script>
 </body>
