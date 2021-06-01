@@ -1,9 +1,13 @@
+@import url(./__item/place-card__item.css);
 @import url(./__image/place-card__image.css);
 @import url(./__bottom-container/place-card__bottom-container.css);
 @import url(./__title/place-card__title.css);
 @import url(./__like-btn/place-card__like-btn.css);
 
 .place-card {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
