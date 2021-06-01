@@ -23,55 +23,9 @@
             </div>
             <button class="profile__add-btn" type="button" aria-label="Add new location"></button>
         </section>
-        <section class="grid">
-            <ul class="place-card-template place-card">
-                <li class="place-card__item"><img src="./images/fairbanks-alaska.jpg" alt="Faribanks, Alaska" class="place-card__image"></li>
-                <li class="place-card__bottom-container">
-                    <h2 class="place-card__title">Fairbanks, Alaska</h2>
-                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
-                </li>
-            </ul>
-
-            <div class="place-card">
-                <img src="./images/glacier-montana.jpg" alt="Glacier National Park" class="place-card__image">
-                <div class="place-card__bottom-container">
-                    <h2 class="place-card__title">Glacier National Park, Montana</h2>
-                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <img src="./images/grand-canyon-arizona.jpg" alt="The Grand Canyon in Arizona" class="place-card__image">
-                <div class="place-card__bottom-container">
-                    <h2 class="place-card__title">The Grand Canyon, Arizona</h2>
-                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <img src="./images/moab-utah.jpg" alt="Moab, Utah" class="place-card__image">
-                <div class="place-card__bottom-container">
-                    <h2 class="place-card__title">Moab, Utah</h2>
-                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <img src="./images/painted-hills-oregon.jpg" alt="The Painted Hills in Oregon" class="place-card__image">
-                <div class="place-card__bottom-container">
-                    <h2 class="place-card__title">The Painted Hills, Oregon</h2>
-                    <button class="place-card__like-btn" type="button" aria-label="Like"></button>
-                </div>
-            </div>
-
-                <div class="place-card">
-                    <img src="./images/yellowstone-montana.jpg" alt="Yellowstone National Park" class="place-card__image">
-                    <div class="place-card__bottom-container">
-                        <h2 class="place-card__title">Yellowstone National Park, Montana</h2>
-                        <button class="place-card__like-btn" type="button" aria-label="Like"></button>
-                    </div>
-                </div>
-            </section>
+        <section class="grid-section">
+            <ul class="place-card__list grid"></ul>
+        </section>
         <footer class="footer">
             <p class="footer__copyright">© 2021 Around The U.S.</p>
         </footer>
@@ -87,6 +41,15 @@
             </div>
         </div>
     </main> 
+    <template id="place-card-template">
+        <li class="place-card">
+            <div class="place-card__image"></div>
+            <div class="place-card__bottom-container">
+                <h2 class="place-card__title">Fairbanks, Alaska</h2>
+                <button class="place-card__like-btn" type="button" aria-label="Like"></button>
+            </div>
+        </li>
+    </template>
 <script src="scripts/index.js"></script>
 </body>
 </html>

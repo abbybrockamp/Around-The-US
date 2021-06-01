@@ -19,34 +19,67 @@ let profileNameEl = document.querySelector(".profile__name");
 let ProfileTitleEl = document.querySelector(".profile__title");
 
 // =====
-// Initial Card
+// Card Elements
 // =====
+const placeCardList = document.querySelector(".place-card__list");
+
+// =====
+// Templates
+// =====
+const placeCardTemplate = document.querySelector("#place-card-template").content.querySelector(".place-card");
+
+// =====
+// Helper Functions 
+// =====
+function renderPlaceCard(placeCardElement) {
+  placeCardList.append(placeCardElement);
+}
+
+// =====
+// Initial Card Data
+// ====
 const initialCards = [
-    {
-      name: "Yosemite Valley",
-      link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
-    },
-    {
-      name: "Lake Louise",
-      link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
-    },
-    {
-      name: "Bald Mountains",
-      link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
-    },
-    {
-      name: "Latemar",
-      link: "https://code.s3.yandex.net/web-code/latemar.jpg"
-    },
-    {
-      name: "Vanoise National Park",
-      link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
-    },
-    {
-      name: "Lago di Braies",
-      link: "https://code.s3.yandex.net/web-code/lago.jpg"
-    }
-  ]; 
+  {
+    name: "Yosemite Valley",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+  },
+  {
+    name: "Lake Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+  },
+  {
+    name: "Bald Mountains",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+  },
+  {
+    name: "Vanoise National Park",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  }
+]; 
+
+// =====
+// Initial Card Hydration
+// ====
+initialCards.forEach(card => {
+  const placeCardElement = placeCardTemplate.cloneNode(true);
+  const titleEl = placeCardElement.querySelector(".place-card__title");
+  const imageEl = placeCardElement.querySelector(".place-card__image");
+  titleEl.textContent = card.name;
+  imageEl.style.backgroundImage = `url(${card.link})`;
+  renderPlaceCard(placeCardElement);
+});
+
+// =====
+// New Card Add
+// ====
 
 // =====
 // Modal Form Functionality 
