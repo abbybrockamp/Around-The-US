@@ -31,8 +31,12 @@ const placeCardTemplate = document.querySelector("#place-card-template").content
 // =====
 // Helper Functions 
 // =====
-function renderPlaceCard(placeCardElement) {
-  placeCardList.append(placeCardElement);
+function renderPlaceCard(placeCardElement, container) {
+  container.append(placeCardElement);
+}
+
+function generatePlaceCard() {
+  
 }
 
 // =====
@@ -74,7 +78,7 @@ initialCards.forEach(card => {
   const imageEl = placeCardElement.querySelector(".place-card__image");
   titleEl.textContent = card.name;
   imageEl.style.backgroundImage = `url(${card.link})`;
-  renderPlaceCard(placeCardElement);
+  renderPlaceCard(placeCardElement, placeCardList);
 });
 
 // =====
