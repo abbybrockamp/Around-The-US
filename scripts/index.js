@@ -1,9 +1,15 @@
 // =====
-// Wrappers
+// Edit Modal Elements
 // =====
-let editModalEl = document.querySelector(".modal");
-let profileEditBtnEl = document.querySelector(".profile__edit-btn")
+let editModalEl = document.querySelector(".modal_type_edit");
+let profileEditBtnEl = document.querySelector(".profile__edit-btn");
 let closeBtnEl = document.querySelector(".modal__close-btn");
+
+// =====
+// Add Modal Elements
+// =====
+let addModalEl = document.querySelector(".modal_type_add");
+let addBtn = document.querySelector(".profile__add-btn");
 
 // =====
 // Form Elements

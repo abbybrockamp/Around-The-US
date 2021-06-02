@@ -29,7 +29,7 @@
         <footer class="footer">
             <p class="footer__copyright">© 2021 Around The U.S.</p>
         </footer>
-        <div class="modal">
+        <div class="modal modal_type_edit">
             <div class="modal__box">
                 <button class="modal__close-btn" aria-label="Close" type="button"></button>
                 <form class="edit-form" id="edit-form" name="edit-form">
@@ -37,6 +37,17 @@
                     <input type="text" class="edit-form__input edit-form__input_content_name" name="edit-form-name" placeholder="Name" required>
                     <input type="text" class="edit-form__input edit-form__input_content_title" name="edit-form-title" placeholder="Title" required>
                     <input class="edit-form__submit" type="submit" name="edit-form-submit" value="Save">
+                </form>
+            </div>
+        </div>
+        <div class="modal modal_type_add">
+            <div class="modal__box">
+                <button class="modal__close-btn" aria-label="Close" type="button"></button>
+                <form class="edit-form" id="edit-form" name="edit-form">
+                    <h2 class="edit-form__header">New Place</h2>
+                    <input type="text" class="edit-form__input edit-form__input_content_name" name="edit-form-name" placeholder="Title" required>
+                    <input type="text" class="edit-form__input edit-form__input_content_title" name="edit-form-title" placeholder="Image link" required>
+                    <input class="edit-form__submit" type="submit" name="edit-form-submit" value="Create">
                 </form>
             </div>
         </div>
