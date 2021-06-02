@@ -1,5 +1,5 @@
 // =====
-// Modal Elements
+// Wrappers
 // =====
 let editModalEl = document.querySelector(".modal");
 let profileEditBtnEl = document.querySelector(".profile__edit-btn")
@@ -27,17 +27,6 @@ const placeCardList = document.querySelector(".place-card__list");
 // Templates
 // =====
 const placeCardTemplate = document.querySelector("#place-card-template").content.querySelector(".place-card");
-
-// =====
-// Helper Functions 
-// =====
-function renderPlaceCard(placeCardElement, container) {
-  container.append(placeCardElement);
-}
-
-function generatePlaceCard() {
-  
-}
 
 // =====
 // Initial Card Data
@@ -70,15 +59,26 @@ const initialCards = [
 ]; 
 
 // =====
+// Helper Functions 
+// =====
+// append card
+function renderPlaceCard(placeCardElement, container) {
+  container.append(placeCardElement);
+}
+
+//hydrate cards
+function generatePlaceCard(card) {
+  const placeCardElement = placeCardTemplate.cloneNode(true);
+  placeCardElement.querySelector(".place-card__title").textContent = card.name;
+  placeCardElement.querySelector(".place-card__image").style.backgroundImage = `url(${card.link})`;
+  return placeCardElement;
+}
+
+// =====
 // Initial Card Hydration
 // ====
 initialCards.forEach(card => {
-  const placeCardElement = placeCardTemplate.cloneNode(true);
-  const titleEl = placeCardElement.querySelector(".place-card__title");
-  const imageEl = placeCardElement.querySelector(".place-card__image");
-  titleEl.textContent = card.name;
-  imageEl.style.backgroundImage = `url(${card.link})`;
-  renderPlaceCard(placeCardElement, placeCardList);
+  renderPlaceCard(generatePlaceCard(card), placeCardList);
 });
 
 // =====
