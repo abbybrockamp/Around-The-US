@@ -14,6 +14,8 @@
     z-index: 999;
     display: flex;
     visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
 }
 
 @media screen and (max-width: 481px) {

@@ -20,7 +20,6 @@ const previewModalImageEl = previewModalEl.querySelector(".preview__image");
 const previewModalCaptionEl = previewModalEl.querySelector(".preview__caption");
 const previewModalCloseBtnEl = document.querySelector(".modal__close-btn_type_preview");
 
-
 // =====
 // Form Elements
 // =====
@@ -49,7 +48,7 @@ const placeCardList = document.querySelector(".place-card__list");
 const placeCardTemplate = document.querySelector("#place-card-template").content.querySelector(".place-card");
 
 // =====
-// Initial Card Data
+// Card Data
 // ====
 const initialCards = [
   {
@@ -78,6 +77,8 @@ const initialCards = [
   }
 ]; 
 
+const newCards = [];
+
 // =====
 // Helper Functions 
 // =====
@@ -97,8 +98,11 @@ function generatePlaceCard(card) {
     previewModalImageEl.src = card.link;
     previewModalCaptionEl.textContent = card.name;
   });
-  
   return placeCardElement;
+}
+
+function addNewCard(card) {
+
 }
 
 // =====
