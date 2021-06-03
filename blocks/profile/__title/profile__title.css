@@ -10,6 +10,10 @@
     max-width: 415px;
 }
 
+.profile__title:hover {
+    cursor: default;
+}
+
 @media screen and (max-width: 769px) {
     .profile__title {
         text-align: center;

@@ -12,3 +12,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.place-card__title:hover {
+    cursor: default;
+}

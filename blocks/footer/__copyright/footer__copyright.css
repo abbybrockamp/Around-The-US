@@ -9,6 +9,10 @@
     margin: 0;
 }
 
+.footer__copyright:hover {
+    cursor: default;
+}
+
 @media screen and (max-width: 481px) {
     .footer__copyright {
         font-size: 14px;
