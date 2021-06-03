@@ -7,6 +7,7 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/grid/grid.css);
 @import url(../blocks/place-card/place-card.css);
+@import url(../blocks/preview/preview.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/modal/modal.css);
 @import url(../blocks/modal/_open/modal_open.css);

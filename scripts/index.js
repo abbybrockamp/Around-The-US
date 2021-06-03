@@ -1,40 +1,49 @@
 // =====
 // Edit Modal Elements
 // =====
-let editModalEl = document.querySelector(".modal_type_edit");
-let profileEditBtnEl = document.querySelector(".profile__edit-btn");
-let editModalCloseBtnEl = document.querySelector(".modal__close-btn_type_edit");
+const editModalEl = document.querySelector(".modal_type_edit");
+const profileEditBtnEl = document.querySelector(".profile__edit-btn");
+const editModalCloseBtnEl = document.querySelector(".modal__close-btn_type_edit");
 
 // =====
 // Add Modal Elements
 // =====
-let addModalEl = document.querySelector(".modal_type_add");
-let addBtnEl = document.querySelector(".profile__add-btn");
-let addModalCloseBtnEl = document.querySelector(".modal__close-btn_type_add")
+const addModalEl = document.querySelector(".modal_type_add");
+const addBtnEl = document.querySelector(".profile__add-btn");
+const addModalCloseBtnEl = document.querySelector(".modal__close-btn_type_add")
+
+// =====
+// Preview Modal Elements
+// =====
+const previewModalEl = document.querySelector(".modal_type_preview");
+const previewModalImageEl = previewModalEl.querySelector(".preview__image");
+const previewModalCaptionEl = previewModalEl.querySelector(".preview__caption");
+const previewModalCloseBtnEl = document.querySelector(".modal__close-btn_type_preview");
+
 
 // =====
 // Form Elements
 // =====
-let editForm = document.querySelector(".form_type_edit");
-let editFormNameInput = document.querySelector(".form__input_content_profile-name");
-let editFormTitleInput = document.querySelector(".form__input_content_profile-title");
+const editForm = document.querySelector(".form_type_edit");
+const editFormNameInput = document.querySelector(".form__input_content_profile-name");
+const editFormTitleInput = document.querySelector(".form__input_content_profile-title");
 
-let addForm = document.querySelector(".form_type_add");
-let addFormTitleInput = document.querySelector(".form__input_content_place-title");
-let addFormLinkInput = document.querySelector(".form__input_content_place-link");
+const addForm = document.querySelector(".form_type_add");
+const addFormTitleInput = document.querySelector(".form__input_content_place-title");
+const addFormLinkInput = document.querySelector(".form__input_content_place-link");
 
 // =====
 // Profile Elements
 // =====
-let profileNameEl = document.querySelector(".profile__name");
-let ProfileTitleEl = document.querySelector(".profile__title");
+const profileNameEl = document.querySelector(".profile__name");
+const ProfileTitleEl = document.querySelector(".profile__title");
 
 // =====
 // Card Elements
 // =====
 const placeCardList = document.querySelector(".place-card__list");
 
-// =====
+;// =====
 // Templates
 // =====
 const placeCardTemplate = document.querySelector("#place-card-template").content.querySelector(".place-card");
@@ -81,7 +90,14 @@ function renderPlaceCard(placeCardElement, container) {
 function generatePlaceCard(card) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
-  placeCardElement.querySelector(".place-card__image").style.backgroundImage = `url(${card.link})`;
+  const imageEl = placeCardElement.querySelector(".place-card__image");
+  imageEl.style.backgroundImage = `url(${card.link})`;
+  imageEl.addEventListener("click", () => {
+    previewModalEl.classList.add("modal_open");
+    previewModalImageEl.src = card.link;
+    previewModalCaptionEl.textContent = card.name;
+  });
+  
   return placeCardElement;
 }
 
@@ -105,9 +121,14 @@ function openAddModal() {
   addModalEl.classList.add("modal_open");
 }
 
+function openPreviewModal() {
+  previewModalEl.classList.add("modal_open");
+}
+
 function closeModal() {
     editModalEl.classList.remove("modal_open") ||
-    addModalEl.classList.remove("modal_open");
+    addModalEl.classList.remove("modal_open") ||
+    previewModalEl.classList.remove("modal_open");
 }
 
 // =====
@@ -134,3 +155,5 @@ editForm.addEventListener("submit", submittedEditModal);
 
 addBtnEl.addEventListener("click", openAddModal)
 addModalCloseBtnEl.addEventListener("click", closeModal);
+
+previewModalCloseBtnEl.addEventListener("click", closeModal);

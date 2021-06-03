@@ -1,0 +1,7 @@
+@import url(./__image/preview__image.css);
+@import url(./__caption/preview__caption.css);
+
+.preview {
+    padding: 0;
+    margin: 0;
+}
