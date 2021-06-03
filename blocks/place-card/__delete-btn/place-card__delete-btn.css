@@ -1,0 +1,10 @@
+.place-card__delete-btn {
+    background-image: url(../../../images/delete-btn.svg);
+    width: 18px;
+    height: 19.3px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 18px;
+    right: 15px;
+}

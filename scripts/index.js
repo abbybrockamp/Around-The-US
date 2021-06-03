@@ -86,7 +86,7 @@ function renderPlaceCard(placeCardElement, container) {
   container.append(placeCardElement);
 }
 
-//hydrate cards
+//hydrate cards & preview function
 function generatePlaceCard(card) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
