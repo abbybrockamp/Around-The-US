@@ -101,10 +101,6 @@ function generatePlaceCard(card) {
   return placeCardElement;
 }
 
-function addNewCard(card) {
-
-}
-
 // =====
 // Initial Card Hydration
 // ====
@@ -145,10 +141,14 @@ function submittedEditModal(event) {
     closeModal();
 }
 
-function submittedAddModal(event) {
+function submittedAddModal(event, placeCardElement) {
   event.preventDefault();
-  return initialCards.push(addFormTitleInput, addFormLinkInput);
+  const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
+  initialCards.push(newCardData);
 }
+
+console.log(initialCards);
+console.log(newCards);
 
 // =====
 // Event Listeners
@@ -161,3 +161,5 @@ addBtnEl.addEventListener("click", openAddModal)
 addModalCloseBtnEl.addEventListener("click", closeModal);
 
 previewModalCloseBtnEl.addEventListener("click", closeModal);
+
+addForm.addEventListener("submit", submittedAddModal);
