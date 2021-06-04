@@ -141,14 +141,21 @@ function submittedEditModal(event) {
     closeModal();
 }
 
-function submittedAddModal(event) {
+function submittedAddModal(event, placeCardElement) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
+<<<<<<< HEAD
   closeModal();
   const newCard = generatePlaceCard(newCardData);
   renderPlaceCard(newCard);
   console.log(renderPlaceCard);
+=======
+  initialCards.push(newCardData);
+>>>>>>> feature/new-place-card-hydration
 }
+
+console.log(initialCards);
+console.log(newCards);
 
 // =====
 // Event Listeners
@@ -161,3 +168,5 @@ addBtnEl.addEventListener("click", openAddModal)
 addModalCloseBtnEl.addEventListener("click", closeModal);
 
 previewModalCloseBtnEl.addEventListener("click", closeModal);
+
+addForm.addEventListener("submit", submittedAddModal);
