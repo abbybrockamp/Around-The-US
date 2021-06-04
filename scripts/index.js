@@ -101,10 +101,6 @@ function generatePlaceCard(card) {
   return placeCardElement;
 }
 
-function addNewCard(card) {
-
-}
-
 // =====
 // Initial Card Hydration
 // ====
@@ -147,7 +143,11 @@ function submittedEditModal(event) {
 
 function submittedAddModal(event) {
   event.preventDefault();
-  return initialCards.push(addFormTitleInput, addFormLinkInput);
+  const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
+  closeModal();
+  const newCard = generatePlaceCard(newCardData);
+  renderPlaceCard(newCard);
+  console.log(renderPlaceCard);
 }
 
 // =====
