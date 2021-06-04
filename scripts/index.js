@@ -77,8 +77,6 @@ const initialCards = [
   }
 ]; 
 
-const newCards = [];
-
 // =====
 // Helper Functions 
 // =====
@@ -88,7 +86,7 @@ function renderPlaceCard(placeCardElement, container) {
 }
 
 //hydrate cards & preview function
-function generatePlaceCard(card) {
+function generatePlaceCard(card, newCardData) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
   const imageEl = placeCardElement.querySelector(".place-card__image");
@@ -144,18 +142,10 @@ function submittedEditModal(event) {
 function submittedAddModal(event, placeCardElement) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
-<<<<<<< HEAD
   closeModal();
   const newCard = generatePlaceCard(newCardData);
   renderPlaceCard(newCard);
-  console.log(renderPlaceCard);
-=======
-  initialCards.push(newCardData);
->>>>>>> feature/new-place-card-hydration
 }
-
-console.log(initialCards);
-console.log(newCards);
 
 // =====
 // Event Listeners
