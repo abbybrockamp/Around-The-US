@@ -96,6 +96,7 @@ function generatePlaceCard(card) {
     previewModalEl.classList.add("modal_open");
     previewModalImageEl.src = card.link;
     previewModalCaptionEl.textContent = card.name;
+    previewModalImageEl.alt = card.name;
   });
 
   const likeBtn = placeCardElement.querySelector(".place-card__like-btn");
