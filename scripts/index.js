@@ -86,7 +86,7 @@ function renderPlaceCard(placeCardElement, container) {
 }
 
 //hydrate cards, preview function, delete btn, like btn
-function generatePlaceCard(card=) {
+function generatePlaceCard(card) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
   const imageEl = placeCardElement.querySelector(".place-card__image");
