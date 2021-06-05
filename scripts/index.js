@@ -144,14 +144,14 @@ function closeModal() {
 // =====
 // Handlers
 // =====
-function submittedEditModal(event) {
+function submitEditModal(event) {
     event.preventDefault();
     profileNameEl.textContent = editFormNameInput.value;
     ProfileTitleEl.textContent = editFormTitleInput.value;
     closeModal();
 }
 
-function submittedAddModal(event) {
+function submitAddModal(event) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
   closeModal();
@@ -164,10 +164,10 @@ function submittedAddModal(event) {
 // =====
 profileEditBtnEl.addEventListener("click", openEditModal);
 editModalCloseBtnEl.addEventListener("click", closeModal);
-editForm.addEventListener("submit", submittedEditModal);
+editForm.addEventListener("submit", submitEditModal);
 
 addBtnEl.addEventListener("click", openAddModal);
 addModalCloseBtnEl.addEventListener("click", closeModal);
-addForm.addEventListener("submit", submittedAddModal);
+addForm.addEventListener("submit", submitAddModal);
 
 previewModalCloseBtnEl.addEventListener("click", closeModal);

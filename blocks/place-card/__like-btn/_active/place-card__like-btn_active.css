@@ -1,5 +1,7 @@
 .place-card__like-btn_active {
     background-image: url(../../../../images/like-btn-active.svg);
+    width: 21px;
+    height: 19px;
 }
 
 .place-card__like-btn_active:hover {
