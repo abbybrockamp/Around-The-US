@@ -13,8 +13,9 @@ Abby Brockamp - abby.brockamp@gmail.com
 
 ## RECENT UPDATES
 
-* All sections of the profile are responsive.
-* Hover effects were added.
+* Like button fills when clicked
+* Delete button removes card elements
+* Form allows users to add their own card with a title and image link
 
 
 ## DEPLOYMENT INSTRUCTION
@@ -32,7 +33,6 @@ Abby Brockamp - abby.brockamp@gmail.com
 
 ## PLANS FOR THE FUTURE
 
-* Create a function that allows a click on card to open a gallery of images from that location uploaded by the user
+* Create a function that allows a click on card to open a multi-image gallery from that location
 * Allow the user to set a main image for their gallery cards
-* Functional like buttons
 
