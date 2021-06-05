@@ -82,7 +82,7 @@ const initialCards = [
 // =====
 // append card
 function renderPlaceCard(placeCardElement, container) {
-  container.append(placeCardElement);
+  container.prepend(placeCardElement);
 }
 
 //hydrate cards & preview function
@@ -139,12 +139,12 @@ function submittedEditModal(event) {
     closeModal();
 }
 
-function submittedAddModal(event, placeCardElement) {
+function submittedAddModal(event) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
-  closeModal();
   const newCard = generatePlaceCard(newCardData);
-  renderPlaceCard(newCard);
+  renderPlaceCard(newCard, placeCardList);
+  closeModal();
 }
 
 // =====
