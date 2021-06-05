@@ -1,0 +1,9 @@
+.grid-section {
+        padding: 0;
+}
+
+@media screen and (max-width: 880px) {
+    .grid-section {
+        padding: 0 19px;
+    }
+}

@@ -42,7 +42,7 @@ const ProfileTitleEl = document.querySelector(".profile__title");
 // =====
 const placeCardList = document.querySelector(".place-card__list");
 
-;// =====
+// =====
 // Templates
 // =====
 const placeCardTemplate = document.querySelector("#place-card-template").content.querySelector(".place-card");
@@ -85,7 +85,7 @@ function renderPlaceCard(placeCardElement, container) {
   container.prepend(placeCardElement);
 }
 
-//hydrate cards & preview function
+//hydrate cards, preview function, delete btn, like btn
 function generatePlaceCard(card, newCardData) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
@@ -166,9 +166,8 @@ profileEditBtnEl.addEventListener("click", openEditModal);
 editModalCloseBtnEl.addEventListener("click", closeModal);
 editForm.addEventListener("submit", submittedEditModal);
 
-addBtnEl.addEventListener("click", openAddModal)
+addBtnEl.addEventListener("click", openAddModal);
 addModalCloseBtnEl.addEventListener("click", closeModal);
+addForm.addEventListener("submit", submittedAddModal);
 
 previewModalCloseBtnEl.addEventListener("click", closeModal);
-
-addForm.addEventListener("submit", submittedAddModal);
