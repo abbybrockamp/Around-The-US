@@ -101,7 +101,13 @@ function generatePlaceCard(card, newCardData) {
   const likeBtn = placeCardElement.querySelector(".place-card__like-btn");
   likeBtn.addEventListener("click", () => {
     likeBtn.classList.toggle("place-card__like-btn_active");
-    });
+  });
+  
+  const deleteBtn = placeCardElement.querySelector(".place-card__delete-btn");
+  deleteBtn.addEventListener("click", () => {
+    placeCardElement.remove();
+  });
+  
   return placeCardElement;
 }
 
