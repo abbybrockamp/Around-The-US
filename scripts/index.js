@@ -40,7 +40,7 @@ const ProfileTitleEl = document.querySelector(".profile__title");
 // =====
 // Card Elements
 // =====
-const placeCardList = document.querySelector(".grid__list");
+const placeCardList = document.querySelector(".grid");
 
 // =====
 // Templates

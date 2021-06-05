@@ -1,5 +1,3 @@
-@import url(./__list/grid__list.css);
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
