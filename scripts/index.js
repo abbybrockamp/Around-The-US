@@ -84,7 +84,7 @@ const newCards = [];
 // =====
 // append card
 function renderPlaceCard(placeCardElement, container) {
-  container.append(placeCardElement);
+  container.prepend(placeCardElement);
 }
 
 //hydrate cards & preview function
@@ -93,11 +93,17 @@ function generatePlaceCard(card) {
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
   const imageEl = placeCardElement.querySelector(".place-card__image");
   imageEl.style.backgroundImage = `url(${card.link})`;
+  
   imageEl.addEventListener("click", () => {
     previewModalEl.classList.add("modal_open");
     previewModalImageEl.src = card.link;
     previewModalCaptionEl.textContent = card.name;
   });
+
+  const likeBtn = placeCardElement.querySelector(".place-card__like-btn");
+  likeBtn.addEventListener("click", () => {
+    likeBtn.classList.toggle("place-card__like-btn_active");
+    });
   return placeCardElement;
 }
 
@@ -144,14 +150,9 @@ function submittedEditModal(event) {
 function submittedAddModal(event, placeCardElement) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
-<<<<<<< HEAD
   closeModal();
   const newCard = generatePlaceCard(newCardData);
-  renderPlaceCard(newCard);
-  console.log(renderPlaceCard);
-=======
-  initialCards.push(newCardData);
->>>>>>> feature/new-place-card-hydration
+  renderPlaceCard(newCard, placeCardList);
 }
 
 console.log(initialCards);
