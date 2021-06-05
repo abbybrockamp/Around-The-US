@@ -5,6 +5,7 @@
 @import url(./__bottom-container/place-card__bottom-container.css);
 @import url(./__title/place-card__title.css);
 @import url(./__like-btn/place-card__like-btn.css);
+@import url(./__like-btn/_active/place-card__like-btn_active.css);
 
 .place-card {
     background-color: #FFFFFF;

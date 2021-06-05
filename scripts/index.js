@@ -41,6 +41,7 @@ const ProfileTitleEl = document.querySelector(".profile__title");
 // Card Elements
 // =====
 const placeCardList = document.querySelector(".place-card__list");
+
 // =====
 // Templates
 // =====
@@ -81,20 +82,32 @@ const initialCards = [
 // =====
 // append card
 function renderPlaceCard(placeCardElement, container) {
-  container.append(placeCardElement);
+  container.prepend(placeCardElement);
 }
 
-//hydrate cards & preview function
-function generatePlaceCard(card) {
+//hydrate cards, preview function, delete btn, like btn
+function generatePlaceCard(card=) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
   const imageEl = placeCardElement.querySelector(".place-card__image");
   imageEl.style.backgroundImage = `url(${card.link})`;
+  
   imageEl.addEventListener("click", () => {
     previewModalEl.classList.add("modal_open");
     previewModalImageEl.src = card.link;
     previewModalCaptionEl.textContent = card.name;
   });
+
+  const likeBtn = placeCardElement.querySelector(".place-card__like-btn");
+  likeBtn.addEventListener("click", () => {
+    likeBtn.classList.toggle("place-card__like-btn_active");
+  });
+  
+  const deleteBtn = placeCardElement.querySelector(".place-card__delete-btn");
+  deleteBtn.addEventListener("click", () => {
+    placeCardElement.remove();
+  });
+  
   return placeCardElement;
 }
 
@@ -153,9 +166,8 @@ profileEditBtnEl.addEventListener("click", openEditModal);
 editModalCloseBtnEl.addEventListener("click", closeModal);
 editForm.addEventListener("submit", submittedEditModal);
 
-addBtnEl.addEventListener("click", openAddModal)
+addBtnEl.addEventListener("click", openAddModal);
 addModalCloseBtnEl.addEventListener("click", closeModal);
+addForm.addEventListener("submit", submittedAddModal);
 
 previewModalCloseBtnEl.addEventListener("click", closeModal);
-
-addForm.addEventListener("submit", submittedAddModal);
