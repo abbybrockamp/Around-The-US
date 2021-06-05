@@ -41,8 +41,7 @@ const ProfileTitleEl = document.querySelector(".profile__title");
 // Card Elements
 // =====
 const placeCardList = document.querySelector(".place-card__list");
-
-;// =====
+// =====
 // Templates
 // =====
 const placeCardTemplate = document.querySelector("#place-card-template").content.querySelector(".place-card");
@@ -86,7 +85,7 @@ function renderPlaceCard(placeCardElement, container) {
 }
 
 //hydrate cards & preview function
-function generatePlaceCard(card, newCardData) {
+function generatePlaceCard(card) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
   const imageEl = placeCardElement.querySelector(".place-card__image");
@@ -139,12 +138,12 @@ function submittedEditModal(event) {
     closeModal();
 }
 
-function submittedAddModal(event, placeCardElement) {
+function submittedAddModal(event) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
   closeModal();
   const newCard = generatePlaceCard(newCardData);
-  renderPlaceCard(newCard);
+  renderPlaceCard(newCard, placeCardList);
 }
 
 // =====
