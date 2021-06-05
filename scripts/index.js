@@ -84,7 +84,7 @@ const newCards = [];
 // =====
 // append card
 function renderPlaceCard(placeCardElement, container) {
-  container.append(placeCardElement);
+  container.prepend(placeCardElement);
 }
 
 //hydrate cards & preview function
@@ -141,14 +141,13 @@ function submittedEditModal(event) {
     closeModal();
 }
 
-function submittedAddModal(event, placeCardElement) {
+function submittedAddModal(event) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
-  initialCards.push(newCardData);
+  const newCard = generatePlaceCard(newCardData);
+  renderPlaceCard(newCard, placeCardList);
+  closeModal();
 }
-
-console.log(initialCards);
-console.log(newCards);
 
 // =====
 // Event Listeners
