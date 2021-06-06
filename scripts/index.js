@@ -138,13 +138,13 @@ function submitEditModal(event) {
     event.preventDefault();
     profileNameEl.textContent = editFormNameInput.value;
     ProfileTitleEl.textContent = editFormTitleInput.value;
-    closeModal();
+    closeModal(editModalEl);
 }
 
 function submitAddModal(event) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
-  closeModal();
+  closeModal(addModalEl);
   const newCard = generatePlaceCard(newCardData);
   renderPlaceCard(newCard, placeCardList);
 }
