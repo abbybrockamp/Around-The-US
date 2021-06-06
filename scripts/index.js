@@ -93,7 +93,7 @@ function generatePlaceCard(card) {
   imageEl.style.backgroundImage = `url(${card.link})`;
   
   imageEl.addEventListener("click", () => {
-    previewModalEl.classList.add("modal_open");
+    openModal(previewModalEl);
     previewModalImageEl.src = card.link;
     previewModalCaptionEl.textContent = card.name;
     previewModalImageEl.alt = card.name;
@@ -122,6 +122,15 @@ initialCards.forEach(card => {
 // =====
 // Modal Open/close
 // =====
+
+function openModal(element) {
+  element.classList.add("modal_open");
+}
+
+function closeModal(element) {
+  element.classList.remove("modal_open");
+}
+
 function openEditModal() {
     editModalEl.classList.add("modal_open");
     editFormNameInput.value = profileNameEl.textContent;
@@ -163,12 +172,25 @@ function submitAddModal(event) {
 // =====
 // Event Listeners
 // =====
-profileEditBtnEl.addEventListener("click", openEditModal);
-editModalCloseBtnEl.addEventListener("click", closeModal);
-editForm.addEventListener("submit", submitEditModal);
+profileEditBtnEl.addEventListener("click", () => {
+  editFormNameInput.value = profileNameEl.textContent;
+  editFormTitleInput.value = ProfileTitleEl.textContent;
+  openModal(editModalEl);
+});
 
-addBtnEl.addEventListener("click", openAddModal);
-addModalCloseBtnEl.addEventListener("click", closeModal);
+addBtnEl.addEventListener("click", () => {
+  openModal(addModalEl);
+});
+
+editForm.addEventListener("submit", submitEditModal);
 addForm.addEventListener("submit", submitAddModal);
 
-previewModalCloseBtnEl.addEventListener("click", closeModal);
+editModalCloseBtnEl.addEventListener("click", () => {
+  closeModal(editModalEl);
+});
+addModalCloseBtnEl.addEventListener("click", () => {
+  closeModal(addModalEl);
+});
+previewModalCloseBtnEl.addEventListener("click", () => {
+  closeModal(previewModalEl);
+});
