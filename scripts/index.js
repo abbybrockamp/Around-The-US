@@ -131,26 +131,6 @@ function closeModal(element) {
   element.classList.remove("modal_open");
 }
 
-function openEditModal() {
-    editModalEl.classList.add("modal_open");
-    editFormNameInput.value = profileNameEl.textContent;
-    editFormTitleInput.value = ProfileTitleEl.textContent;
-}
-
-function openAddModal() {
-  addModalEl.classList.add("modal_open");
-}
-
-function openPreviewModal() {
-  previewModalEl.classList.add("modal_open");
-}
-
-function closeModal() {
-    editModalEl.classList.remove("modal_open") ||
-    addModalEl.classList.remove("modal_open") ||
-    previewModalEl.classList.remove("modal_open");
-}
-
 // =====
 // Handlers
 // =====
