@@ -1,0 +1,8 @@
+.form__submit_disabled {
+    background-color: #FFFF;
+    color: rgba(0, 0, 0, .2);
+    border: 1px solid rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: default;
+}

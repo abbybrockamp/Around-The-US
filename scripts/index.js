@@ -30,6 +30,7 @@ const editFormTitleInput = document.querySelector(".form__input_content_profile-
 const addForm = document.querySelector(".form_type_add");
 const addFormTitleInput = document.querySelector(".form__input_content_place-title");
 const addFormLinkInput = document.querySelector(".form__input_content_place-link");
+const formSubmitButton = document.querySelector(".form__submit");
 
 // =====
 // Profile Elements
@@ -84,7 +85,6 @@ const initialCards = [
 function renderPlaceCard(placeCardElement, container) {
   container.prepend(placeCardElement);
 }
-
 //hydrate cards, preview function, delete btn, like btn
 function generatePlaceCard(card) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
@@ -168,9 +168,11 @@ addForm.addEventListener("submit", submitAddModal);
 editModalCloseBtnEl.addEventListener("click", () => {
   closeModal(editModalEl);
 });
+
 addModalCloseBtnEl.addEventListener("click", () => {
   closeModal(addModalEl);
 });
+
 previewModalCloseBtnEl.addEventListener("click", () => {
   closeModal(previewModalEl);
 });

@@ -34,9 +34,11 @@
                 <button class="modal__close-btn modal__close-btn_type_edit" aria-label="Close" type="button"></button>
                 <form class="form form_type_edit" id="edit-form" name="edit-form">
                     <h2 class="form__header">Edit Profile</h2>
-                    <input type="text" class="form__input form__input_content_profile-name" name="edit-form-profile-name" placeholder="Name" required>
-                    <input type="text" class="form__input form__input_content_profile-title" name="edit-form-profile-title" placeholder="Title" required>
-                    <input class="form__submit" type="submit" name="edit-form-submit" value="Save">
+                    <input type="text" class="form__input form__input_content_profile-name" id="edit-form__name-input" name="edit-form__profile-name" placeholder="Name" minlength="2" maxlength="40" required>
+                    <span class="form__input-error" id="edit-form__name-input-error"></span>
+                    <input type="text" class="form__input form__input_content_profile-title" id="edit-form__title-input" name="edit-form__profile-title" placeholder="Title" minlength="2" maxlnegth="200" required>
+                    <span class="form__input-error" id="edit-form__title-input-error"></span>
+                    <input class="form__submit" type="submit" name="edit-form-submit" value="Save" disabled>
                 </form>
             </div>
         </div>
@@ -45,9 +47,11 @@
                 <button class="modal__close-btn modal__close-btn_type_add" aria-label="Close" type="button"></button>
                 <form class="form form_type_add" id="add-form" name="add-form">
                     <h2 class="form__header">New Place</h2>
-                    <input type="text" class="form__input form__input_content_place-title" name="add-form-title" placeholder="Title" required>
-                    <input type="url" class="form__input form__input_content_place-link" name="add-form-link" placeholder="Image link" required>
-                    <input class="form__submit" type="submit" name="add-form-submit" value="Create">
+                    <input type="text" class="form__input form__input_content_place-title" id="add-form__title-input" name="add-form__title" placeholder="Title" minlength="1" maxlength="30" required>
+                    <span class="form__input-error" id="add-form__title-input-error"></span>
+                    <input type="url" class="form__input form__input_content_place-link" id="add-form__link-input" name="add-form__link" placeholder="Image link" required>
+                    <span class="form__input-error" id="add-form__link-input-error"></span>
+                    <input class="form__submit form__submit_disabled" type="submit" name="add-form-submit" value="Create" disabled>
                 </form>
             </div>
         </div>
@@ -72,5 +76,6 @@
         </li>
     </template>
 <script src="scripts/index.js"></script>
+<script src="scripts/validate.js"></script>
 </body>
 </html>
