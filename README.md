@@ -13,9 +13,9 @@ Abby Brockamp - abby.brockamp@gmail.com
 
 ## RECENT UPDATES
 
-* Like button fills when clicked
-* Delete button removes card elements
-* Form allows users to add their own card with a title and image link
+* Esc button closes modals
+* Click anywhere on overlay to close modals
+* Form validation
 
 
 ## DEPLOYMENT INSTRUCTION
