@@ -4,7 +4,6 @@
 const editModalEl = document.querySelector(".modal_type_edit");
 const profileEditBtnEl = document.querySelector(".profile__edit-btn");
 const editModalCloseBtnEl = document.querySelector(".modal__close-btn_type_edit");
-
 // =====
 // Add Modal Elements
 // =====
@@ -49,43 +48,14 @@ const placeCardList = document.querySelector(".grid");
 const placeCardTemplate = document.querySelector("#place-card-template").content.querySelector(".place-card");
 
 // =====
-// Card Data
-// ====
-const initialCards = [
-  {
-    name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
-  },
-  {
-    name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
-  },
-  {
-    name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
-  },
-  {
-    name: "Vanoise National Park",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg"
-  }
-]; 
-
-// =====
 // Helper Functions 
 // =====
 // append card
 function renderPlaceCard(placeCardElement, container) {
   container.prepend(placeCardElement);
 }
-//hydrate cards, preview function, delete btn, like btn
+
+//hydrate cards, add eventListeners
 function generatePlaceCard(card) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
@@ -125,11 +95,29 @@ initialCards.forEach(card => {
 
 function openModal(element) {
   element.classList.add("modal_open");
+  closeModalByEsc(element);
+  closeModalByOverlayClick(element);
+  //add close by overlay click
 }
 
 function closeModal(element) {
   element.classList.remove("modal_open");
 }
+
+const closeModalByEsc = (element) => {
+  document.addEventListener("keydown", (event) => {
+    if(event.key === "Escape") {
+    element.classList.remove("modal_open");
+    }});
+  };
+
+  const closeModalByOverlayClick = (element) => {
+    const modalEls = [...document.querySelectorAll(".modal")];
+    modalEls.forEach((modal) => 
+      modal.addEventListener("click", (event) => {
+      element.classList.remove("modal_open");
+      }));
+  };
 
 // =====
 // Handlers
