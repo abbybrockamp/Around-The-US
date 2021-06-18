@@ -1,3 +1,4 @@
+@import url(./__overlay/modal__overlay.css);
 @import url(./__box/modal__box.css);
 @import url(./__box/_type/modal__box_type_preview.css);
 @import url(./__close-btn/modal__close-btn.css);
@@ -7,7 +8,6 @@
     height: 100vh;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    background-color: rgba(0, 0, 0, .5);
     position: fixed;
     top: 0;
     left: 0;

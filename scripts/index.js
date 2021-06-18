@@ -112,7 +112,7 @@ const closeModalByEsc = (element) => {
   };
 
   const closeModalByOverlayClick = (element) => {
-    const modalEls = [...document.querySelectorAll(".modal")];
+    const modalEls = [...document.querySelectorAll(".modal__overlay")];
     modalEls.forEach((modal) => 
       modal.addEventListener("click", (event) => {
       element.classList.remove("modal_open");
