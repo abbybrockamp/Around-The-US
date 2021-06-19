@@ -1,7 +1,7 @@
 
 const hideInputError = (formEl, input, {errorClass}) => {
     const errorSpan = formEl.querySelector(`#${input.id}-error`);
-    errorSpan.textContent = " ";
+    errorSpan.textContent = "";
     input.classList.remove(errorClass);
 };
 
@@ -13,24 +13,24 @@ const showInputError = (formEl, input, {errorClass}) => {
 
 const checkInputValidity = (formEl, input, settings) => {
     if (input.validity.valid) {
-        hideInputError(formEl, input, settings);
-    } else {
-        showInputError(formEl, input, settings);
+        return hideInputError(formEl, input, settings);
     }
+    showInputError(formEl, input, settings);
 };
 
-const hasValidInputs = (inputList) => {
-    return inputList.every((input) => input.validity.valid === true);
+const hasInvalidInputs = (inputList) => {
+    return inputList.some((input) => {
+        return !input.validity.valid;
+    });
 };
 
 const toggleButton = (inputList, button, settings) => {
-    if(hasValidInputs(inputList)) {
-        button.disabled = false;
-        button.classList.remove(settings.inactiveButtonClass);
-    } else {
+    if (hasInvalidInputs(inputList)) {
         button.disabled = true;
-        button.classList.add(settings.inactiveButtonClass);
+        return button.classList.add(settings.inactiveButtonClass);
     }
+    button.disabled = false;
+    button.classList.remove(settings.inactiveButtonClass);
 };
 
 const setEventListeners = (formEl, settings) => {
