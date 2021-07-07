@@ -164,3 +164,24 @@ addModalCloseBtnEl.addEventListener("click", () => {
 previewModalCloseBtnEl.addEventListener("click", () => {
   closeModal(previewModalEl);
 });
+
+// Validation //
+
+import FormValidator from "./FormValidator.js";
+
+const validationSettings = {
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__submit",
+  inactiveButtonClass: "form__submit_disabled",
+  inputErrorClass: "form__input-error",
+  errorClass: "form__input_error_active"
+};
+
+const editFormEl = editModalEl.querySelector(".form_type_edit");
+const addFormEl = addModalEl.querySelector(".form_type_add");
+
+const editFormValidator = new FormValidator(validationSettings, editModalEl);
+const addFormValidator = new FormValidator(validationSettings, addModalEl);
+
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();

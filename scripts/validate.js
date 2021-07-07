@@ -52,7 +52,6 @@ const enableValidation = (settings) => {
     });
 };
 
-
 enableValidation({
     formSelector: ".form",
     inputSelector: ".form__input",
