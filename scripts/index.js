@@ -1,3 +1,6 @@
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+
 // =====
 // Edit Modal Elements
 // =====
@@ -36,7 +39,6 @@ const formSubmitButton = document.querySelector(".form__submit");
 // =====
 const profileNameEl = document.querySelector(".profile__name");
 const ProfileTitleEl = document.querySelector(".profile__title");
-
 // =====
 // Card Elements
 // =====
@@ -51,12 +53,9 @@ const placeCardTemplate = document.querySelector("#place-card-template").content
 // Helper Functions 
 // =====
 // append card
-function renderPlaceCard(placeCardElement, container) {
-  container.prepend(placeCardElement);
-}
 
 //hydrate cards, add eventListeners
-function generatePlaceCard(card) {
+/*function generatePlaceCard(card) {
   const placeCardElement = placeCardTemplate.cloneNode(true);
   placeCardElement.querySelector(".place-card__title").textContent = card.name;
   const imageEl = placeCardElement.querySelector(".place-card__image");
@@ -81,12 +80,20 @@ function generatePlaceCard(card) {
   
   return placeCardElement;
 }
+*/
 
-// =====
-// Initial Card Hydration
-// ====
-initialCards.forEach(card => {
-  renderPlaceCard(generatePlaceCard(card), placeCardList);
+/// CARD CLASS USAGE ///
+
+
+const cardSelector = "#place-card-template";
+
+function renderPlaceCard(data, container) {
+  const card = new Card(data, cardSelector);
+  container.prepend(card.getView());
+}
+
+initialCards.forEach((initialCard) => {
+  renderPlaceCard(initialCard, placeCardList);
 });
 
 // =====
@@ -132,6 +139,7 @@ function submitEditModal(event) {
 function submitAddModal(event) {
   event.preventDefault();
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
+  renderPlaceCard(newCardData, placeCardList);
   closeModal(addModalEl);
   const newCard = generatePlaceCard(newCardData);
   renderPlaceCard(newCard, placeCardList);
@@ -165,9 +173,9 @@ previewModalCloseBtnEl.addEventListener("click", () => {
   closeModal(previewModalEl);
 });
 
-// Validation //
-
-import FormValidator from "./FormValidator.js";
+// =====
+// Validation
+// =====
 
 const validationSettings = {
   inputSelector: ".form__input",
