@@ -47,8 +47,6 @@ function submitAddModal(event) {
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
   renderPlaceCard(newCardData, placeCardList);
   closeModal(addModalEl);
-  const newCard = generatePlaceCard(newCardData);
-  renderPlaceCard(newCard, placeCardList);
 }
 
 // ======================================================================================================================//
