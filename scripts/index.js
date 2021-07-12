@@ -22,7 +22,6 @@ const editFormTitleInput = document.querySelector(".form__input_content_profile-
 const addForm = document.querySelector(".form_type_add");
 const addFormTitleInput = document.querySelector(".form__input_content_place-title");
 const addFormLinkInput = document.querySelector(".form__input_content_place-link");
-
 // profile elements
 const profileNameEl = document.querySelector(".profile__name");
 const profileTitleEl = document.querySelector(".profile__title");
