@@ -22,11 +22,15 @@ const editFormTitleInput = document.querySelector(".form__input_content_profile-
 const addForm = document.querySelector(".form_type_add");
 const addFormTitleInput = document.querySelector(".form__input_content_place-title");
 const addFormLinkInput = document.querySelector(".form__input_content_place-link");
+
 // profile elements
 const profileNameEl = document.querySelector(".profile__name");
 const profileTitleEl = document.querySelector(".profile__title");
 
-// CARD
+// ======================================================================================================================//
+// card functionality
+// ======================================================================================================================//
+
 const placeCardList = document.querySelector(".grid");
 const cardSelector = "#place-card-template";
 
@@ -39,38 +43,28 @@ initialCards.forEach((initialCard) => {
   renderPlaceCard(initialCard, placeCardList);
 });
 
-function submitAddModal(event) {
-  event.preventDefault();
-  const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
-  renderPlaceCard(newCardData, placeCardList);
-  closeModal(addModalEl);
-  clearInputs();
-}
-
-function clearInputs() {
-  addFormTitleInput.value = "";
-  addFormLinkInput.value = "";
-}
-
 const previewModal = document.querySelector(".modal_type_preview");
 const previewImage = document.querySelector(".preview__image");
 const previewCaption = document.querySelector(".preview__caption");
 export {previewModal, previewImage, previewCaption};
 
 // ======================================================================================================================//
-// modal functions
+// modal functionality
 // ======================================================================================================================//
+
 export function openModal(element) {
   element.classList.add("modal_open");  
   document.addEventListener("keydown", closeByEscape);
-  
-  const modalEls = [...document.querySelectorAll(".modal__overlay")];
-  const openModal = document.querySelector('.modal_open')
-  modalEls.forEach((modal) => 
-    modal.addEventListener("click", () => {
-    closeModal(openModal);
-    }));
 }
+
+const modalEls = [...document.querySelectorAll(".modal")];
+modalEls.forEach((modal) =>
+  modal.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("modal__overlay")) {
+      closeModal(modal);
+    }
+  })
+);
 
 function closeByEscape(evt) {
   if (evt.key === 'Escape') {
@@ -91,11 +85,18 @@ function submitEditModal(event) {
     closeModal(editModalEl);
 }
 
-
+function submitAddModal(event) {
+  event.preventDefault();
+  const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
+  renderPlaceCard(newCardData, placeCardList);
+  closeModal(addModalEl);
+  addFormValidator.resetValidation();
+}
 
 // ======================================================================================================================//
 // event listeners
 // ======================================================================================================================//
+
 profileEditBtnEl.addEventListener("click", () => {
   editFormNameInput.value = profileNameEl.textContent;
   editFormTitleInput.value = profileTitleEl.textContent;
@@ -124,6 +125,7 @@ previewModalCloseBtnEl.addEventListener("click", () => {
 // ======================================================================================================================//
 // form validation
 // ======================================================================================================================//
+
 const validationSettings = {
   inputSelector: ".form__input",
   submitButtonSelector: ".form__submit",
