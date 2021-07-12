@@ -1,3 +1,9 @@
+import {
+    previewModal, 
+    previewImage, 
+    previewCaption, 
+    openModal } from "./index.js";
+
 class Card {
     constructor(data, cardSelector) {
         this._name = data.name;
@@ -21,18 +27,10 @@ class Card {
     }
 
     _handlePreviewModal() {
-        this._previewModal = document.querySelector(".modal_type_preview");
-        this._previewImage = document.querySelector(".preview__image");
-        this._previewCaption = document.querySelector(".preview__caption");
-
-        this._previewModal.classList.add("modal_open");
-
-        this._previewImage.src = this._link;
-        this._previewImage.alt = this._name;
-    }
-
-    _openModal() {
-
+        openModal(previewModal);
+        previewImage.src = this._link;
+        previewImage.alt = this._name;
+        previewCaption.textContent = this._name;
     }
 
     _getTemplate() {
@@ -40,7 +38,6 @@ class Card {
         .querySelector(this._cardSelector)
         .content.querySelector(".place-card")
         .cloneNode(true);
-        
     }
 
     getView() {

@@ -12,7 +12,6 @@ const addBtnEl = document.querySelector(".profile__add-btn");
 const addModalCloseBtnEl = document.querySelector(".modal__close-btn_type_add")
 
 // modal_type_preview elements
-const previewModalEl = document.querySelector(".modal_type_preview");
 const previewModalCloseBtnEl = document.querySelector(".modal__close-btn_type_preview");
 
 // form elements
@@ -26,11 +25,10 @@ const addFormLinkInput = document.querySelector(".form__input_content_place-link
 
 // profile elements
 const profileNameEl = document.querySelector(".profile__name");
-const ProfileTitleEl = document.querySelector(".profile__title");
+const profileTitleEl = document.querySelector(".profile__title");
 
-// card grid element
+// CARD
 const placeCardList = document.querySelector(".grid");
-
 const cardSelector = "#place-card-template";
 
 function renderPlaceCard(data, container) {
@@ -47,49 +45,61 @@ function submitAddModal(event) {
   const newCardData = {name: addFormTitleInput.value, link: addFormLinkInput.value};
   renderPlaceCard(newCardData, placeCardList);
   closeModal(addModalEl);
+  clearInputs();
 }
+
+function clearInputs() {
+  addFormTitleInput.value = "";
+  addFormLinkInput.value = "";
+}
+
+const previewModal = document.querySelector(".modal_type_preview");
+const previewImage = document.querySelector(".preview__image");
+const previewCaption = document.querySelector(".preview__caption");
+export {previewModal, previewImage, previewCaption};
 
 // ======================================================================================================================//
 // modal functions
 // ======================================================================================================================//
-function openModal(element) {
-  element.classList.add("modal_open");
-  closeModalByEsc(element);
-  closeModalByOverlayClick(element);
+export function openModal(element) {
+  element.classList.add("modal_open");  
+  document.addEventListener("keydown", closeByEscape);
+  
+  const modalEls = [...document.querySelectorAll(".modal__overlay")];
+  const openModal = document.querySelector('.modal_open')
+  modalEls.forEach((modal) => 
+    modal.addEventListener("click", () => {
+    closeModal(openModal);
+    }));
+}
+
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openModal = document.querySelector('.modal_open')
+    closeModal(openModal);
+  };
 }
 
 function closeModal(element) {
   element.classList.remove("modal_open");
+  document.removeEventListener('keydown', closeByEscape);
 }
-
-const closeModalByEsc = (element) => {
-  document.addEventListener("keydown", (event) => {
-    if(event.key === "Escape") {
-    element.classList.remove("modal_open");
-    }});
-  };
-
-  const closeModalByOverlayClick = (element) => {
-    const modalEls = [...document.querySelectorAll(".modal__overlay")];
-    modalEls.forEach((modal) => 
-      modal.addEventListener("click", () => {
-      element.classList.remove("modal_open");
-      }));
-  };
 
 function submitEditModal(event) {
     event.preventDefault();
     profileNameEl.textContent = editFormNameInput.value;
-    ProfileTitleEl.textContent = editFormTitleInput.value;
+    profileTitleEl.textContent = editFormTitleInput.value;
     closeModal(editModalEl);
 }
+
+
 
 // ======================================================================================================================//
 // event listeners
 // ======================================================================================================================//
 profileEditBtnEl.addEventListener("click", () => {
   editFormNameInput.value = profileNameEl.textContent;
-  editFormTitleInput.value = ProfileTitleEl.textContent;
+  editFormTitleInput.value = profileTitleEl.textContent;
   openModal(editModalEl);
 });
 
@@ -109,7 +119,7 @@ addModalCloseBtnEl.addEventListener("click", () => {
 });
 
 previewModalCloseBtnEl.addEventListener("click", () => {
-  closeModal(previewModalEl);
+  closeModal(previewModal);
 });
 
 // ======================================================================================================================//
